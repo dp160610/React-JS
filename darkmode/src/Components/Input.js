@@ -19,6 +19,7 @@ class Input extends React.Component {
                     ? event.target.checked : event.target.value
             });
         };
+        
         validate = () => {
             let nameError = '';
             let emailError = '';
@@ -49,6 +50,11 @@ class Input extends React.Component {
             }
         
     };
+    resetName(){
+        this.setState({
+            name : '',
+        });
+    }
         
        
         render(){
@@ -76,7 +82,7 @@ class Input extends React.Component {
 
                         <div>
                             <div className="button">
-                                <button style={buttonStyle} >Clear</button>
+                                <button style={buttonStyle} onclick={this.resetName}>Clear</button>
                                 <button type='submit' style={buttonStyle} onClick={this.handleChange}>Submit</button>
                             </div>
 
